@@ -1,4 +1,4 @@
-import { ADD_GOOD_TO_CART, REMOVE_GOOD_TO_CART } from "./action-type";
+import { ADD_GOOD_TO_CART, REMOVE_GOOD_FROM_CART } from "./action-type";
 
 const initialState = {
   goodId: 0,
@@ -30,6 +30,7 @@ const initialState = {
 
 function reducer(state = initialState, action) {
   if (action.type === ADD_GOOD_TO_CART) {
+    // actiondan gelen id
     const id = action.payload.id;
     let good = state.goods.find((item) => item.id === id);
     good = { ...good, id: state.goodId };
@@ -42,7 +43,7 @@ function reducer(state = initialState, action) {
     };
   }
 
-  if (action.type === REMOVE_GOOD_TO_CART) {
+  if (action.type === REMOVE_GOOD_FROM_CART) {
     const id = action.payload.id;
     const good = state.cart.filter((item) => item.id !== id);
     console.log(good, id, state.cart.id);

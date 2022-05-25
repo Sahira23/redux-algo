@@ -1,4 +1,4 @@
-import { ADD_GOOD_TO_CART, REMOVE_GOOD_TO_CART } from "./action-type";
+import { ADD_GOOD_TO_CART, REMOVE_GOOD_FROM_CART } from "./action-type";
 
 export function addGoodToCart(id) {
   return {
@@ -9,9 +9,9 @@ export function addGoodToCart(id) {
   };
 }
 
-export function removeGoodToCart(id) {
+export function removeGoodFromCart(id) {
   return {
-    type: REMOVE_GOOD_TO_CART,
+    type: REMOVE_GOOD_FROM_CART,
     payload: {
       id: id,
     },
